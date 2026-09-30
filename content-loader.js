@@ -1,14 +1,5 @@
-// Loads content.txt and fills in the page. See content.txt itself for
-// the editing rules (emphasis syntax, adding list items, etc).
-//
-// NOTE: fetch() can't read local files when a page is opened directly
-// via double-click (a file:// URL) — browsers block that for security.
-// Run a local server to preview changes, e.g. from this folder:
-//   python3 -m http.server 8000
-// then open http://localhost:8000/ in a browser.
-
+// Loads content.txt into the webpage
 (function () {
-  // ---- parse content.txt into flat key/value pairs -----------------
   function parseContent(text) {
     var data = {};
     text.split("\n").forEach(function (line) {
@@ -20,9 +11,6 @@
     return data;
   }
 
-  // ---- group keys like "faq.1.q" / "faq.1.a" into ------------------
-  // { faq: [ {q: "...", a: "..."}, {q: "...", a: "..."} ] }
-  // List order follows the number in the key, not the order in the file.
   function groupRepeats(data) {
     var groups = {};
     Object.keys(data).forEach(function (key) {
@@ -33,16 +21,12 @@
       if (!groups[group][index]) groups[group][index] = {};
       groups[group][index][field] = data[key];
     });
-    // compact away the empty slot at index 0 if numbering starts at 1
     Object.keys(groups).forEach(function (g) {
       groups[g] = groups[g].filter(function (item) { return item; });
     });
     return groups;
   }
 
-  // ---- turn "some *emphasized* text" into safe HTML -----------------
-  // Anything in the content file is treated as plain text EXCEPT a
-  // pair of *asterisks*, which becomes an italic/highlighted <em>.
   function escapeHtml(str) {
     return str
       .replace(/&/g, "&amp;")
@@ -54,9 +38,6 @@
     return escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
 
-  // ---- apply data-k / data-k-href / data-k-alt / data-k-src ----------
-  // to `root` (the whole document, or a single cloned list item),
-  // looking values up through `lookup(fieldName)`.
   function applyIn(root, lookup) {
     root.querySelectorAll("[data-k]").forEach(function (el) {
       var value = lookup(el.getAttribute("data-k"));
@@ -76,14 +57,21 @@
     });
   }
 
-  // ---- stamp out one clone of a <template data-repeat="group"> ------
-  // per item found for that group, in order, right before the template.
   function applyRepeats(groups) {
     document.querySelectorAll("template[data-repeat]").forEach(function (tpl) {
-      var items = groups[tpl.getAttribute("data-repeat")] || [];
-      items.forEach(function (item) {
+      var items = groups[tpl.getAttribute("data-repeat")];
+      if (!items || !items.length) return;
+
+      Array.prototype.slice.call(tpl.parentNode.children).forEach(function (child) {
+        if (child !== tpl) child.remove();
+      });
+
+      items.forEach(function (item, i) {
         var clone = tpl.content.cloneNode(true);
         applyIn(clone, function (field) { return item[field]; });
+        clone.querySelectorAll("[data-auto-index]").forEach(function (el) {
+          el.textContent = String(i + 1);
+        });
         tpl.parentNode.insertBefore(clone, tpl);
       });
     });
@@ -109,11 +97,7 @@
     })
     .catch(function (err) {
       console.warn(
-        "[content-loader] Couldn't load content.txt — the page text will be blank.\n" +
-        "If you opened this file directly (file://...), that's why: browsers block " +
-        "local pages from reading local files. Run a local server instead, e.g.:\n" +
-        "  python3 -m http.server 8000\n" +
-        "then visit http://localhost:8000/\n" +
+        "[content-loader] Couldn't load content.txt. \n" +
         "Original error:", err
       );
     });
