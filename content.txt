@@ -1,0 +1,96 @@
+# --- Browser tab
+[meta.title] Greater Seattle Soundscape Monitoring Project
+[meta.description] A citizen science program designed to collect and analyze audio data for fauna in Seattle, WA. Supported by the University of Washington Student Technology Fee.
+
+
+# --- Top navigation bar
+[nav.orgName] Greater Seattle Soundscape Monitoring Project
+[nav.orgSub] ECHOSPACE GROUP, UNIVERSITY OF WASHINGTON
+
+
+# --- Hero
+[hero.headline] Explore Your *Local Soundscape*
+[hero.subhead] A citizen science lending program to monitor terrestrial animal vocalizations in the Greater Seattle Area and survey their populations.
+[hero.ctaPrimary] RSVP for a Session
+[hero.ctaSecondary] Learn More
+[hero.sponsorLine] Made possible by the UW Student Technology Fee.
+[hero.imageAlt] A crow perched on a lichen-covered rock
+
+
+# --- Stat strip
+# Fixed at 4 boxes side by side — adding a 5th needs a layout change,
+# not just a content edit, so this section isn't a numbered list.
+[stats.1.value] 220
+[stats.1.label] species observed
+[stats.2.value] 50
+[stats.2.label] AudioMoths available
+[stats.3.value] 3
+[stats.3.label] student researchers
+[stats.4.value] 0
+[stats.4.label] hours of audio collected
+
+
+# --- Program Description
+[how.heading] AudioMoth Student Research Program
+[how.subhead] No experience needed!
+
+[how.step.1.title] Pick up your AudioMoth kit
+[how.step.1.body] Come to the start-up session to learn about the Greater Seattle Soundscape Monitoring Project, how to setup and deploy AudioMoth microphone units, and analysis tools we use!
+
+[how.step.2.title] Record and collect data
+[how.step.2.body] Send your AudioMoth out into the field, periodically retrieving data and replacing batteries during the recording period. You'll run an analysis using machine learning models to detect local species and generate insights about your location's soundscape.
+
+[how.step.3.title] View your findings and the impact
+[how.step.3.body] Upload data to the cloud, comparing your findings to others. See the generated fingerprint of detected species over the recording period, contributing to the long-term understanding of our ecosystem.
+
+
+# --- Impact
+[mission.quote] The impact *your data* has on our environment.
+[mission.body.1.text] Passive acoustic monitoring, or PAM, uses continuously deployed microphones to collect audio data at a particular location. By enlisting the help of citizen scientists (like you!) to collect this data, the impact and breadth of projects like this one greatly increases.
+[mission.body.2.text] The collected recordings are crucial to maintaining an ongoing dataset used by scientists to track local population trends over time. Through extensive data collection, we learn more about how climate change, human development, and many other factors can affect biodiversity in our local soundscape.
+
+
+# --- FAQ
+[faq.heading] Frequently Asked Questions
+
+[faq.1.q] Do I need to buy or bring any equipment?
+[faq.1.a] The AudioMoth kits, which include the recorder, case, batteries, and SD cards, are provided by Echospace and funded by the Student Technology Fee. You'll only need a laptop to run the analysis software.
+
+[faq.2.q] Do I need any background in bioacoustics, ecology, or computer science?
+[faq.2.a] No! We'll show you how to setup the AudioMoth, understand how it works, and provide an out-of-the-box app to analyze the data. However, if you have experience, you'll be able to dig deeper into the data as you wish!
+
+
+# --- RSVP
+[rsvp.heading] RSVP for the start-up session
+[rsvp.body] Save yourself a spot at one of our start-up sessions, where you'll pick up an AudioMoth and get started with collecting data.
+[rsvp.datesLabel] Session dates:
+[rsvp.datesText] Tuesday, November 5 at 6:30 PM and Thursday, November 10 at 6:30 PM at the eScience Institute Meeting Room
+[rsvp.button] Open the RSVP form
+[rsvp.buttonHref] https://forms.gle/REPLACE_ME
+
+
+# --- Sponsors
+[sponsors.heading] Funding
+[sponsors.subhead] This program is made possible with support from:
+
+[sponsors.1.src] assets/stf_logo.png
+[sponsors.1.alt] University of Washington Student Technology Fee
+[sponsors.1.href] https://techfee.uw.edu/
+
+[sponsors.2.src] assets/apl_logo.png
+[sponsors.2.alt] Applied Physics Laboratory at the University of Washington
+[sponsors.2.href] https://apl.uw.edu/
+
+
+# --- Footer
+[footer.brand] Greater Seattle Soundscape Monitoring Project
+[footer.tagline] A citizen science program designed to collect and analyze audio data for fauna in Seattle, WA. Supported by the University of Washington Student Technology Fee.
+[footer.contactLabel] Contact
+[footer.contactLinkText] Echospace Group
+[footer.contactLinkHref] https://uw-echospace.github.io/
+[footer.contactLine2] Applied Physics Lab & eScience Institute,
+[footer.contactLine3] University of Washington
+[footer.contactEmail] soundscape.seattle@gmail.com
+[footer.contactEmailHref] mailto:soundscape.seattle@gmail.com
+
+[sticky.text] Greater Seattle Soundscape Monitoring Project
