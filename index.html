@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#14263a">
 <title>Greater Seattle Soundscape Monitoring Project</title>
-<meta name="description" content="Borrow an AudioMoth recorder for a quarter, record the sounds of your corner of Seattle, and help track the city's birds and bats. RSVP for the pickup workshop.">
+<meta name="description" content="A citizen science program designed to collect and analyze audio data for fauna in Seattle, WA. Supported by the University of Washington Student Technology Fee.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
@@ -53,7 +53,9 @@ header.top .wrap{position:relative;z-index:1;display:flex;flex-direction:column;
 .brand span{display:block;font:600 10px var(--mono);letter-spacing:.08em;color:#a7b2c2;margin-top:2px}
 
 .hero{position:relative;flex:1;display:flex;align-items:center;padding:20px 0}
-.hero-copy{max-width:900px;padding-bottom:52px}
+.hero-copy{position:relative;z-index:1;max-width:620px;padding-bottom:52px}
+.hero-image{position:absolute;right:0;bottom:0;width:min(68%,880px);z-index:0;pointer-events:none}
+.hero-image img{width:100%;height:auto;display:block}
 .hero h1{font-size:clamp(42px,7.2vw,92px);line-height:1.02;color:var(--cream);text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--lichen-bright)}
 .hero-copy p{max-width:540px;margin:24px 0 0;font-size:18px;color:#cdd6e2;text-wrap:pretty}
@@ -111,7 +113,7 @@ section{padding:88px 0 0}
 /* sponsors */
 .sponsor-row{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px 48px;align-items:baseline;border-top:1px solid rgba(18,26,34,.14);padding-top:32px}
 .sponsor-row li{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--soft);letter-spacing:-.005em}
-.sponsor-row img{height:90px;width:auto;display:block}
+.sponsor-row img{max-height:90px;max-width:100%;width:auto;height:auto;display:block}
 
 footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start;font-size:14px}
@@ -128,6 +130,7 @@ footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
 
 @media (max-width:980px){
   .mission .wrap{grid-template-columns:1fr}
+  .hero-image{display:none}
 }
 @media (max-width:640px){
   body{padding-bottom:80px}
@@ -168,12 +171,15 @@ footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
         <h1>Explore Your <em>Local Soundscape</em></h1>
         <p>A citizen science lending program to monitor terrestrial animal vocalizations in the Greater Seattle Area and survey their populations.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#rsvp">RSVP for a Workshop</a>
+          <a class="btn btn-primary" href="#rsvp">RSVP for a Session</a>
           <a class="btn btn-line on-dark" href="#how">Learn More</a>
         </div>
         <p class="sponsor">Made possible by the UW Student Technology Fee.</p>
       </div>
     </div>
+  </div>
+  <div class="hero-image">
+    <img src="crow_hero_cropped.webp" alt="A crow perched on a lichen-covered rock" width="1100" height="616">
   </div>
 </header>
 
@@ -248,7 +254,10 @@ footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
     <div class="rsvp" id="rsvp">
       <div>
         <h2>RSVP for the start-up session</h2>
-        <p>Save yourself a spot at one of our kickoff workshops, where you'll pick up an AudioMoth and get started with collecting data.</p>
+        <p>Save yourself a spot at one of our start-up sessions, where you'll pick up an AudioMoth and get started with collecting data.</p>
+        <p>
+          <b>Session dates:</b> Tuesday, November 5 at 6:40 PM (LOCATION HERE) and Thursday, November 10 at 6:40 PM (LOCATION HERE)
+        </p>
       </div>
       <a class="btn btn-primary" href="https://forms.gle/REPLACE_ME" target="_blank" rel="noopener">Open the RSVP form<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
@@ -262,6 +271,7 @@ footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
       </div>
       <ul class="sponsor-row">
         <li><a href="https://techfee.uw.edu/" target="_blank" rel="noopener"><img src="stf_logo.png" alt="University of Washington Student Technology Fee"></a></li>
+        <li><a href="https://apl.uw.edu/" target="_blank" rel="noopener"><img src="apl_logo.png" alt="Applied Physics Laboratory at the University of Washington"></a></li>
       </ul>
     </div>
   </section>
@@ -275,7 +285,7 @@ footer{margin-top:80px;background:var(--conifer);color:#a7b0c0;padding:44px 0}
       <div style="margin-top:8px;max-width:32ch">A citizen science program designed to collect and analyze audio data for fauna in Seattle, WA. Supported by the University of Washington Student Technology Fee.</div>
     </div>
     <div class="cols">
-      <div><b>Contact</b><div><a href="https://uw-echospace.github.io/" target="_blank" rel="noopener">Echospace Group</a>,<br>Applied Physics Lab & eScience Institute, <br>University of Washington</div><div><a href="mailto:seattle_soundscape@gmail.com">seattle_soundscape@gmail.com</a></div></div>
+      <div><b>Contact</b><div><a href="https://uw-echospace.github.io/" target="_blank" rel="noopener">Echospace Group</a>,<br>Applied Physics Lab & eScience Institute, <br>University of Washington</div><div><a href="mailto:soundscape.seattle@gmail.com">soundscape.seattle@gmail.com</a></div></div>
     </div>
   </div>
 </footer>
