@@ -33,6 +33,7 @@
 # --- Program Description
 [how.heading] AudioMoth Student Research Program
 [how.subhead] No experience needed!
+[how.imageAlt] A researcher in gloves holding a small brown bat
 
 [how.step.1.title] Pick up your AudioMoth kit
 [how.step.1.body] Come to the start-up session to learn about the Greater Seattle Soundscape Monitoring Project, how to setup and deploy AudioMoth microphone units, and analysis tools we use!
@@ -42,7 +43,6 @@
 
 [how.step.3.title] View your findings and the impact
 [how.step.3.body] Upload data to the cloud, comparing your findings to others. See the generated fingerprint of detected species over the recording period, contributing to the long-term understanding of our ecosystem.
-
 
 # --- Impact
 [mission.quote] The impact *your data* has on our environment.
@@ -59,12 +59,14 @@
 [faq.2.q] Do I need any background in bioacoustics, ecology, or computer science?
 [faq.2.a] No! We'll show you how to setup the AudioMoth, understand how it works, and provide an out-of-the-box app to analyze the data. However, if you have experience, you'll be able to dig deeper into the data as you wish!
 
+[faq.3.q] Who runs this program?
+[faq.3.a] The Greater Seattle Soundscape Monitoring Project is run by the Echospace Group. We study acoustic sensing in terrestrial and aquatic animals, as well as run projects using passive acoustic monitoring in the Union Bay Natural Area. You can learn more about [our projects here](https://uw-echospace.github.io/#projects).
 
 # --- RSVP
 [rsvp.heading] RSVP for the start-up session
 [rsvp.body] Save yourself a spot at one of our start-up sessions, where you'll pick up an AudioMoth and get started with collecting data.
 [rsvp.datesLabel] Session dates:
-[rsvp.datesText] Tuesday, November 5 at 6:30 PM and Thursday, November 10 at 6:30 PM at the eScience Institute Meeting Room
+[rsvp.datesText] Tuesday, November 5 at 6:30 PM and Thursday, November 10 at 6:30 PM in the eScience Institute Meeting Room
 [rsvp.button] Open the RSVP form
 [rsvp.buttonHref] https://forms.gle/REPLACE_ME
 

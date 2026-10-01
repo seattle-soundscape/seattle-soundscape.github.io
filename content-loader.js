@@ -31,11 +31,17 @@
     return str
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
+  // "some *emphasized* text" -> <em>; "[link text](url)" -> <a href="url">
   function renderInline(value) {
-    var escaped = escapeHtml(value);
-    return escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    var html = escapeHtml(value);
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, text, url) {
+      var external = /^https?:\/\//i.test(url);
+      return '<a href="' + url + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">" + text + "</a>";
+    });
+    return html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
 
   function applyIn(root, lookup) {
